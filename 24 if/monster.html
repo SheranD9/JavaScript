@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>monster</title>
+</head>
+
+<body>
+    <img src="https://trident.takagino.net/doc2024/javascript/assets/03/monster.png" alt="" id="btn"></a>
+
+    <p id="result">HP:10</p>
+    <script>
+        let num = 10;
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+
+        btn.addEventListener('click', function () {
+            num = num - 1;
+            result.innerHTML = num;
+
+
+            if (num <= 0) {
+                result.innerHTML = 0;
+            }
+
+
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
