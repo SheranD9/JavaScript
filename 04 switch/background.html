@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+
+<body>
+    <button id="btn" class="red"> click </button>
+
+
+    <script>
+        const button = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+            const classname = btn.classList.value;
+        })
+        switch (classname) {
+            case 'red':
+                document.body.style.backgroundColor = '#ff0000';
+                break;
+            case 'blue':
+                document.body.style.backgroundColor = '#0000ff';
+                break;
+            case 'green':
+                document.body.style.backgroundColor = '#0000ff';
+            default:
+                document.body.style.backgroundColor = '#000000';
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

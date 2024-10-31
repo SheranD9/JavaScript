@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クラスの造作</title>
+</head>
+
+<body>
+    <P id="sample" class="hoge fuga">ほげ</P>
+
+    <script>
+        const sample = document.getElementById('sample');
+        console.log(sample.classList.value);
+
+        sample.classList.add('piyo');
+        sample.classList.remove('hoge');
+        sample.classList.replaces('fuga', 'hogera');
+
+
+        sample.addEventListener('click', function () {
+
+        })
+
+
+        sample.classList.toggle('piyo');
+
+        if (sample.classList.contains('hoge')) {
+            sample.classList.remove('hoge')
+        } else {
+            sample.classList.add('hoge');
+            sample.innerHTML = 'あ';
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
