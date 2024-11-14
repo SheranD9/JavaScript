@@ -19,15 +19,6 @@
         const message = document.getElementById('message');
 
 
-        let daikichi = 0;
-        let chuukichi = 0;
-        let syoukichi = 0;
-        let kyou = 0;
-
-        const count = document.getElementById('count');
-        count.innerHTML = '<li>${daikichi}</li>< li > ${ chuukichi }</li ><li>${syoukichi}</li> <li>${kyou}</li><li>${daikyou}</li>';
-
-
         btn.addEventListener('click', function () {
             const num = Math.floor(Math.random() * 5);
 
@@ -35,32 +26,26 @@
                 case 0:
                     result.setAttribute('src', `${path}/daikichi.png`);
                     message.innerHTML = '買ってないのに宝くじが当たる';
-                    daikichi += 1;
                     break;
-
 
                 case 1:
                     result.setAttribute('src', `${path}/chuukichi.png`);
                     message.innerHTML = '何もしてないのに褒められる';
-                    chuukichi += 1;
                     break;
 
                 case 2:
                     result.setAttribute('src', `${path}/syoukichi.png`);
                     message.innerHTML = '頭皮の調子が良い';
-                    syoukichi += 1;
                     break;
 
                 case 3:
                     result.setAttribute('src', `${path}/kyou.png`);
                     message.innerHTML = 'コンタクトレンズが割れる';
-                    kyou += 1;
                     break;
 
                 case 4:
                     result.setAttribute('src', `${path}/daikyou.png`);
                     message.innerHTML = 'どこかの骨を折る';
-                    daikyo += 1;
                     break;
 
                 default:
@@ -68,330 +53,8 @@
                     break;
             }
 
-
-
-
-
             result.classList.toggle('active');
-
-
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
 </body>

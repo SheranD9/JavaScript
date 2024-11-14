@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ2z</title>
+    <style>
+        /* 画像のフェードイン効果 (任意) */
+        #result {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        #result.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">占う</button>
+    <p><img id="result" src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png" alt="占う">
+    </p>
+    <p id="message">何か一言が表示されます。</p>
+    <p>大吉の回数: <span id="daikichi-count">0</span></p>
+    <p>中吉の回数: <span id="chuukichi-count">0</span></p>
+    <p>小吉の回数: <span id="syoukichi-count">0</span></p>
+    <p>凶の回数: <span id="kyou-count">0</span></p>
+    <p>大凶の回数: <span id="daikyou-count">0</span></p>
+
+    <script>
+
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+        const message = document.getElementById('message');
+
+
+        let daikichiCount = 0;
+        let chuukichiCount = 0;
+        let syoukichiCount = 0;
+        let kyouCount = 0;
+        let daikyouCount = 0;
+
+
+        const daikichiDisplay = document.getElementById('daikichi-count');
+        const chuukichiDisplay = document.getElementById('chuukichi-count');
+        const syoukichiDisplay = document.getElementById('syoukichi-count');
+        const kyouDisplay = document.getElementById('kyou-count');
+        const daikyouDisplay = document.getElementById('daikyou-count');
+
+
+        btn.addEventListener('click', function () {
+
+            const num = Math.floor(Math.random() * 5);
+
+            switch (num) {
+                case 0:
+
+                    daikichiCount++;
+                    daikichiDisplay.innerText = daikichiCount;
+
+                    if (daikichiCount === 1) {
+                        message.innerHTML = '買ってないのに宝くじが当たる';
+                    } else if (daikichiCount === 2) {
+                        message.innerHTML = '新しい自転車が買えるかもしれない';
+                    } else if (daikichiCount >= 3) {
+                        message.innerHTML = '億万長者になる予感';
+                    }
+
+                    result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikichi.png');
+                    break;
+
+                case 1:
+
+                    chuukichiCount++;
+                    chuukichiDisplay.innerText = chuukichiCount;
+                    message.innerHTML = '何もしてないのに褒められる';
+                    result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/chuukichi.png');
+                    break;
+
+                case 2:
+
+
+                    syoukichiCount++;
+                    syoukichiDisplay.innerText = syoukichiCount;
+                    message.innerHTML = '頭皮の調子が良い';
+                    result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/syoukichi.png');
+                    break;
+
+                case 3:
+
+                    kyouCount++;
+                    kyouDisplay.innerText = kyouCount;
+                    message.innerHTML = 'コンタクトレンズが割れる';
+                    result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/kyou.png');
+                    break;
+
+                case 4:
+
+                    daikyouCount++;
+                    daikyouDisplay.innerText = daikyouCount;
+                    message.innerHTML = 'どこかの骨を折る';
+                    result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikyou.png');
+                    break;
+
+                default:
+                    console.log('エラー');
+                    break;
+            }
+  result.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
