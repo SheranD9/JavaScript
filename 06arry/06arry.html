@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+
+  <body>
+    <script>
+      const fruits = ["apple", "banana", "orange"];
+
+      for (let i = 0; i < fruits.length; i++) {
+        console.log(`${i}番目の値は,${fruits[i]}です。`);
+      }
+
+      let sum = 0;
+      const num = [5, 10, 15, 20, 25, 30];
+      for (let i = 1; i < num.length - 1; i++) {
+        sum = sum + num[i];
+      }
+      console.log(sum);
+    </script>
+  </body>
+</html>

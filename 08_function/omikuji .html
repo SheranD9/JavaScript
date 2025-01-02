@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="omikuji-image">
+      <img
+        id="omikuji-img"
+        src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikichi.png"
+        alt="おみくじ画像"
+      />
+    </div>
+
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+
+    <script>
+      const url =
+        "https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/";
+      const files = [
+        "daikichi.png",
+        "chuukichi.png",
+        "syoukichi.png",
+        "kyou.png",
+        "daikyou.png",
+      ];
+
+      const changeInterval = 100;
+
+      let intervalId;
+      let isChanging = true;
+
+      function changeImage() {
+        if (isChanging) {
+          const randomIndex = Math.floor(Math.random() * files.length);
+          const image = document.getElementById("omikuji-img");
+          image.src = url + files[randomIndex];
+        }
+      }
+
+      const startBtn = document.getElementById("startBtn");
+
+      const stopBtn = document.getElementById("stopBtn");
+      stopBtn = document.addEventListener("click", () => {
+        if (isChanging) {
+          clearInterval(intervalId);
+          isChanging = false;
+          document.getElementById("start-btn");
+        } else {
+          isChanging = true;
+          intervalId = setInterval(changeImage, changeInterval);
+          document.getElementById("stop-btn");
+        }
+      });
+
+      intervalId = setInterval(changeImage, changeInterval);
+    </script>
+  </body>
+</html>
