@@ -9,11 +9,23 @@
 
       body {
         margin: 0;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
-        background-color: #15151e;
+        /* background-color: #15151e; */
+        background: linear-gradient(
+          90deg,
+          #ff0000,
+          #ff7300,
+          #ffff00,
+          #00ff00,
+          #00ffff,
+          #0000ff,
+          #ff00ff
+        );
+        background-size: 300% 300%;
+        transition: background 1s;
         overflow: hidden;
         font-family: "Share Tech Mono", monospace;
       }
@@ -121,6 +133,26 @@
         updateDigitalClock();
         setTimeout(clock, 1000 - new Date().getMilliseconds());
       };
+
+      const changeBackground = () => {
+        const colors = [
+          "linear-gradient(90deg, #ff0000, #ff7300, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff)",
+          "linear-gradient(90deg, #0000ff, #00ffff, #00ff00, #ffff00, #ff7300, #ff0000)",
+          "linear-gradient(90deg, #00ffff, #0000ff, #ff00ff, #ff0000, #ffff00, #00ff00)",
+        ];
+
+        let index = 0;
+
+        setInterval(() => {
+          document.body.style.background = colors[index];
+          document.body.style.backgroundSize = "300% 300%";
+          document.body.style.transition = "background 3s ease";
+          index = (index + 1) % colors.length;
+        }, 3000); // Change every 3 seconds
+      };
+
+      // Initialize the background animation
+      changeBackground();
 
       clock();
     </script>
